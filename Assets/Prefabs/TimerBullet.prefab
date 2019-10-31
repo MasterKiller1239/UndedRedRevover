@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4317086054049014343}
   - component: {fileID: 4317086054049014342}
+  - component: {fileID: 3008366164805854124}
   m_Layer: 0
   m_Name: TimerBullet
   m_TagString: Untagged
@@ -80,3 +81,15 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3008366164805854124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4317086054049014341}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cede88e14ebdc1499b5a0df39eadf91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

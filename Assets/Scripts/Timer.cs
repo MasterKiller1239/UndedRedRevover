@@ -8,14 +8,17 @@ public class Timer : MonoBehaviour
     public GameObject bulletPrefab;
     
     private List<GameObject> _listOfBullets;
-    private float _currentTime;
+    public float _currentTime{
+        get;
+        private set;
+    }
     
 
     void Start()
     {
         float trans = 0;
         _listOfBullets = new List<GameObject>();
-        for(int i = 0; i < timeToEnd/10; i++)
+        for(int i = 0; i < timeToEnd/10.0f; i++)
         {
             if(i % 6 != 0)
             {
@@ -34,9 +37,9 @@ public class Timer : MonoBehaviour
     void FixedUpdate()
     {
         _currentTime += Time.fixedDeltaTime;
-        if(((timeToEnd - _currentTime) / 10)+1 > _listOfBullets.Count){
+        if(((timeToEnd - _currentTime) / 10.0f)+1 > _listOfBullets.Count){
             float trans = 0;
-            while(((timeToEnd - _currentTime) / 10)+1 > _listOfBullets.Count){
+            while(((timeToEnd - _currentTime) / 10.0f)+1 > _listOfBullets.Count){
                 if(_listOfBullets.Count % 6 != 0)
                 {
                     trans = .1f;
@@ -54,10 +57,13 @@ public class Timer : MonoBehaviour
                 }
                 
         }
-        if(((timeToEnd - _currentTime) / 10)+1 < _listOfBullets.Count)
+        if(((timeToEnd - _currentTime) / 10.0f) + 1.0 < _listOfBullets.Count)
         {
-            Destroy(_listOfBullets[_listOfBullets.Count - 1]);
-            _listOfBullets.Remove(_listOfBullets[_listOfBullets.Count - 1]);
+            //Debug.Log(((timeToEnd - _currentTime) / 10.0f), this);
+            if(_listOfBullets.Count - 1 > 0){
+                Destroy(_listOfBullets[_listOfBullets.Count - 1]);
+                _listOfBullets.Remove(_listOfBullets[_listOfBullets.Count - 1]);
+            }
         }
         //Debug.Log(timeToEnd - _currentTime);
     }
